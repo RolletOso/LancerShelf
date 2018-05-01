@@ -1,0 +1,52 @@
+14-10-2017 14:56:53  Application Started..
+14-10-2017 14:56:53  Network List Created..
+14-10-2017 14:57:41  Network Selected: Broadcom 802.11n Network Adapter
+14-10-2017 14:57:42  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:44  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:45  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:46  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:47  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:48  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:49  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:50  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:51  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:52  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:53  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:54  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:55  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:56  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:57  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:58  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:57:59  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:00  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:01  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:02  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:03  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:04  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:05  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:06  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:07  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:08  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:09  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:10  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:11  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:12  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:13  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:14  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:15  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:16  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:17  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:18  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:19  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:20  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:21  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:22  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:24  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:25  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:26  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:27  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:28  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:29  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:30  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:31  Download Speed: 0.0KB/s && Upload Speed: 0.0 KB/s
+14-10-2017 14:58:32  Application Stopped..

@@ -1,0 +1,759 @@
+<?php  
+
+ require_once 'modules/session.php';
+ require_once 'modules/profile.ajax.php';
+
+
+
+$trap_id = (int)mysql_real_escape_string($_REQUEST['a642a77abd7d4f51bf9226ceaf891fcbb5b299b8']); 
+
+		$user_profile = new userprofile();
+		$user_skills = $user_profile->get_core_profile($trap_id,'skills');
+		$user_first_name = $user_profile->get_main_profile($trap_id,'fname');
+		$user_last_name = $user_profile->get_main_profile($trap_id,'lname');
+		$user_bio = $user_profile->get_main_profile($trap_id,'bio');
+		$user_phone = $user_profile->get_main_profile($trap_id,'phone');
+		$user_email = $user_profile->get_main_profile($trap_id,'email');
+		$user_city = $user_profile->get_main_profile($trap_id,'city');
+		$user_nickname = $user_profile->get_main_profile($trap_id,'nickname');
+		$user_avatar = $user_profile->get_main_profile($trap_id,'profilePic');
+		$user_gender = $user_profile->get_main_profile($trap_id,'gender');
+		$user_join_date = $user_profile->get_main_profile($trap_id,'date');
+		$user_birthday = $user_profile->get_main_profile($trap_id,'birthday');
+		$user_country = $user_profile->get_core_profile($trap_id,'country');
+		$user_twitter = $user_profile->get_extra_profile($trap_id,'twitter');
+		$user_facebook = $user_profile->get_extra_profile($trap_id,'facebook');
+		$user_googleplus = $user_profile->get_extra_profile($trap_id,'googleplus');
+		$user_skype = $user_profile->get_extra_profile($trap_id,'skype');
+		$user_github = $user_profile->get_extra_profile($trap_id,'github');
+		$user_linkedin = $user_profile->get_extra_profile($trap_id,'linkedin');
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<!-- Template Name: Clip-Two - Responsive Admin Template build with Twitter Bootstrap 3.x | Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	<head>
+		<title> <?php echo $user_first_name." ".$user_last_name." "; ?> - Profile - LancerShelf.com</title>
+		<!-- start: META -->
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: GOOGLE FONTS -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+		<!-- end: GOOGLE FONTS -->
+		<!-- start: MAIN CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="vendor/themify-icons/themify-icons.min.css">
+		<link href="vendor/animate.css/animate.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/switchery/switchery.min.css" rel="stylesheet" media="screen">
+		<!-- end: MAIN CSS -->
+		<!-- start: CLIP-TWO CSS -->
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<link rel="stylesheet" href="assets/css/plugins.css">
+		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+		<!-- end: CLIP-TWO CSS -->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link href="vendor/bootstrap-fileinput/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/bootstrap-rating/bootstrap-rating.css" rel="stylesheet" media="screen">
+		<link href="vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+		<style> .fix-select{width: auto !important; } </style>
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+	</head>
+	<!-- end: HEAD -->
+	<body>
+		<div id="app">
+			<!-- sidebar -->
+			<div class="sidebar app-aside" id="sidebar">
+				<div class="sidebar-container perfect-scrollbar">
+					<nav>
+						<!-- start: SEARCH FORM -->
+						<div class="search-form">
+							<a class="s-open" href="#">
+								<i class="ti-search"></i>
+							</a>
+							<form class="navbar-form" role="search">
+								<a class="s-remove" href="#" target=".navbar-form">
+									<i class="ti-close"></i>
+								</a>
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search...">
+									<button class="btn search-button" type="submit">
+										<i class="ti-search"></i>
+									</button>
+								</div>
+							</form>
+						</div>
+						<!-- end: SEARCH FORM -->
+						<!-- start: MAIN NAVIGATION MENU -->
+						
+						<!-- end: MAIN NAVIGATION MENU -->
+						<!-- start: CORE FEATURES -->
+						<?php require_once 'sidebar_nav.php'; ?>
+						<!-- end: CORE FEATURES -->
+						<!-- start: DOCUMENTATION BUTTON -->
+						
+						<!-- end: DOCUMENTATION BUTTON -->
+					</nav>
+				</div>
+			</div>
+			<!-- / sidebar -->
+			<div class="app-content">
+				<!-- start: TOP NAVBAR -->
+				<header class="navbar navbar-default navbar-static-top">
+					<!-- start: NAVBAR HEADER -->
+					<div class="navbar-header">
+						<a href="#" class="sidebar-mobile-toggler pull-left hidden-md hidden-lg" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+							<i class="ti-align-justify"></i>
+						</a>
+						<a class="navbar-brand" href="#">
+							<img src="assets/images/logo.png" alt="LancerShelf"/>
+						</a>
+						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+							<i class="ti-align-justify"></i>
+						</a>
+						<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<i class="ti-view-grid"></i>
+						</a>
+					</div>
+					<!-- end: NAVBAR HEADER -->
+					<!-- start: NAVBAR COLLAPSE -->
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-right">
+							<!-- start: MESSAGES DROPDOWN -->
+							
+								
+								<?php require_once 'ajax.header.inbox.php'; ?>
+								
+							
+							<!-- end: MESSAGES DROPDOWN -->
+							<!-- start: ACTIVITIES DROPDOWN -->
+							<li class="dropdown">
+								<a href class="dropdown-toggle" data-toggle="dropdown">
+									<i class="ti-check-box"></i> <span>ACTIVITIES</span>
+								</a>
+								<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+									<li>
+										<span class="dropdown-header"> You have new notifications</span>
+									</li>
+									<li>
+										<div class="drop-down-wrapper ps-container">
+											<div class="list-group no-margin">
+												<a class="media list-group-item" href="">
+													<img class="img-circle" alt="..." src="assets/images/avatar-1.jpg">
+													<span class="media-body block no-margin"> Use awesome animate.css <small class="block text-grey">10 minutes ago</small> </span>
+												</a>
+												<a class="media list-group-item" href="">
+													<span class="media-body block no-margin"> 1.0 initial released <small class="block text-grey">1 hour ago</small> </span>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li class="view-all">
+										<a href="#">
+											See All
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: ACTIVITIES DROPDOWN -->
+							<!-- start: LANGUAGE SWITCHER -->
+							<li class="dropdown">
+								<a href class="dropdown-toggle" data-toggle="dropdown">
+									<i class="ti-world"></i> English
+								</a>
+								<ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
+									<li>
+										<a href="#" class="menu-toggler">
+											Deutsch
+										</a>
+									</li>
+									<li>
+										<a href="#" class="menu-toggler">
+											English
+										</a>
+									</li>
+									<li>
+										<a href="#" class="menu-toggler">
+											Italiano
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- start: LANGUAGE SWITCHER -->
+							<!-- start: USER OPTIONS DROPDOWN -->
+							<li class="dropdown current-user">
+								<a href class="dropdown-toggle" data-toggle="dropdown">
+									<img src="assets/images/avatar-1.jpg" alt="Peter"> <span class="username">Peter <i class="ti-angle-down"></i></i></span>
+								</a>
+								<ul class="dropdown-menu dropdown-dark">
+									<li>
+										<a href="pages_user_profile.php">
+											My Profile
+										</a>
+									</li>
+									
+									
+									
+									<li>
+										<a href="login.php">
+											Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: USER OPTIONS DROPDOWN -->
+						</ul>
+						<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+						<div class="close-handle visible-xs-block menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<div class="arrow-left"></div>
+							<div class="arrow-right"></div>
+						</div>
+						<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+					</div>
+					<a class="dropdown-off-sidebar sidebar-mobile-toggler hidden-md hidden-lg" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+						&nbsp;
+					</a>
+					<a class="dropdown-off-sidebar hidden-sm hidden-xs" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+						&nbsp;
+					</a>
+					<!-- end: NAVBAR COLLAPSE -->
+				</header>
+				<!-- end: TOP NAVBAR -->
+				<div class="main-content" >
+					<div class="wrap-content container" id="container">
+						<!-- start: PAGE TITLE -->
+						<section id="page-title">
+							<div class="row">
+								<div class="col-sm-8">
+									<h1 class="mainTitle">Profile</h1>
+									<span class="mainDescription"><?php echo $user_first_name." ".$user_last_name."'s Profile"; ?>.</span>
+								</div>
+								<ol class="breadcrumb">
+									<li>
+										<span>Pages</span>
+									</li>
+									<li class="active">
+										<span>Freelancer Profile</span>
+									</li>
+								</ol>
+							</div>
+						</section>
+						<!-- end: PAGE TITLE -->
+						<!-- start: USER PROFILE -->
+						<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="tabbable">
+										<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+											<li class="active">
+												<a data-toggle="tab" href="#panel_overview">
+													Overview
+												</a>
+											</li>
+											<li>
+												<a data-toggle="tab" href="#panel_projects">
+													Projects
+												</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div id="panel_overview" class="tab-pane fade in active">
+												<div class="row">
+													<div class="col-sm-5 col-md-4">
+														<div class="user-left">
+															<div class="center">
+																<h4><?php echo $user_first_name." ".$user_last_name; ?></h4>
+																<div class="fileinput fileinput-new" data-provides="fileinput">
+																	<div class="user-image">
+																		<div class="fileinput-new thumbnail"><img id="user_profile_1" src="modules/<?php echo $user_avatar; ?>" alt="<?php echo $user_last_name."'s profile picture";?>">
+																		</div>
+																		<div class="fileinput-preview fileinput-exists thumbnail"></div>
+																		<div class="user-image-buttons">
+																			
+																			<a href="#" class="btn fileinput-exists btn-red btn-sm" data-dismiss="fileinput">
+																				<i class="fa fa-times"></i>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+																<hr>
+																<div class="social-icons block">
+																	<ul>
+																		<li data-placement="top" data-original-title="Twitter" class="social-twitter tooltips">
+																			<a href="<?php echo $user_twitter; ?>" id="twitter_url" target="_blank">
+																				Twitter
+																			</a>
+																		</li>
+																		<li data-placement="top" data-original-title="Facebook" class="social-facebook tooltips">
+																			<a href="<?php echo $user_facebook; ?>" id="facebook_url" target="_blank">
+																				Facebook
+																			</a>
+																		</li>
+																		<li data-placement="top" data-original-title="Google" class="social-google tooltips">
+																			<a href="<?php echo $user_googleplus; ?>" id="google_plus_url" target="_blank">
+																				Google+
+																			</a>
+																		</li>
+																		<li data-placement="top" data-original-title="LinkedIn" class="social-linkedin tooltips">
+																			<a href="<?php echo $user_linkedin; ?>"  id="linkedin_url" target="_blank">
+																				LinkedIn
+																			</a>
+																		</li>
+																		<li data-placement="top" data-original-title="Github" class="social-github tooltips">
+																			<a href="<?php echo $user_github; ?>" id="github_url" target="_blank">
+																				Github
+																			</a>
+																		</li>
+																		<li data-placement="top" data-original-title="Skype" class="social-skype tooltips">
+																			<a href="<?php echo $user_skype; ?>" id="skype_url" target="_blank">
+																				Skype
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+																<hr>
+															</div>
+															<table class="table table-condensed">
+																<thead>
+																	<tr>
+																		<th colspan="3">Contact Information</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>profile url</td>
+																		<td>
+																		<a  id="profile_url" href="#">
+																			lancerShelf.com/<?php echo $user_nickname; ?>
+																		</a></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>email:</td>
+																		<td>
+																		<a href="mailto:<?php echo $user_email; ?>" id="mailto_url">
+																			<?php echo $user_email; ?>
+																		</a></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>phone:</td>
+																		<td id="phone_data"><?php echo $user_phone; ?></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Location</td>
+																		<td id="user_location">
+																	<?php echo $user_city; ?> , Nigeria
+																		</td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																</tbody>
+															</table>
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th colspan="3">General information</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Major Skills</td>
+																		<td id="major_skills"><?php echo $user_skills; ?></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Rating</td>
+																		<td id="user_rating">  
+																		
+																		<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+																		
+																		
+																		</td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Join Date</td>
+																		<td><?php echo $user_join_date; ?></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Completed Projects</td>
+																		<td>
+																		<a href="#">
+																			23 
+																		</a></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Status</td>
+																		<td><span class="label label-sm label-info">Active</span></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																</tbody>
+															</table>
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th colspan="3">Additional information</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Date of Birth</td>
+																		<td id="user_birthday"><?php echo $user_birthday; ?></td>
+																		<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																	</tr>
+																	
+																</tbody>
+															</table>
+														</div>
+													</div>
+													<div class="col-sm-7 col-md-8">
+														<div class="row space20">
+															<div class="col-sm-3">
+																<a class="btn btn-icon margin-bottom-5 margin-bottom-5 btn-block" id="hireUser" href="#">
+																	<i class="fa fa-briefcase block text-primary text-extra-large margin-bottom-10"></i>
+																	Hire User
+																</a>
+															</div>
+															<div class="col-sm-3">
+																<a class="btn btn-icon margin-bottom-5 btn-block" href="pages_messages.php">
+																	<i class="fa fa-paper-plane block text-primary text-extra-large margin-bottom-10"></i>
+																	Message User
+																</a>
+															</div>
+															
+														
+														</div>
+														<div class="panel panel-white" id="activities">
+															<div class="panel-heading border-light">
+																<h4 class="panel-title text-primary">Rate</h4>
+																<paneltool class="panel-tools" tool-collapse="tool-collapse" tool-refresh="load1" tool-dismiss="tool-dismiss"></paneltool>
+															</div>
+															<div collapse="activities" ng-init="activities=false" class="panel-wrapper">
+																<div class="panel-body">
+																	<ul class="timeline-xs">
+																		<li class="timeline-item success">
+																			
+																			
+																			<?php 
+																			
+																	
+
+						//start rating module
+						require_once 'modules/session.php';
+						require_once 'modules/db.php';
+
+
+							//echo $active_session_mail;
+						$source_uid = (int)$active_session_id;
+						$destination_uid = (int)$_REQUEST['a642a77abd7d4f51bf9226ceaf891fcbb5b299b8'];	
+
+						$match_query = mysql_query("SELECT * FROM rating WHERE source_uid = '$source_uid' AND  destination_uid = '$destination_uid'");
+						$average_query = mysql_query("SELECT AVG(rating) FROM rating WHERE destination_uid = '$destination_uid'");
+						$count_query = mysql_query("SELECT COUNT(DISTINCT source_uid) FROM rating WHERE destination_uid = '$destination_uid'");
+						
+						$avaerage_rating =  mysql_result($average_query,0);
+						$avaerage_rating = floor($avaerage_rating);
+						$count_query = mysql_result($count_query,0);
+
+						$count = mysql_num_rows($match_query);
+														if($count < 1){					
+																		echo '<div class="margin-left-15">
+																				<div class="text-muted text-small">
+																					Rate this user
+																				</div>
+																				<p>
+																				
+																				<div class="margin-bottom-30 text-extra-large" id="clickSanta">
+																<input type="hidden" class="rating-tooltip" data-filled="fa fa-star margin-right-5 text-red" data-empty="fa fa-star-o margin-right-5"/>
+														<span id="ratingValue" class="label label-success">        </span>
+																				</div>
+																				</p>
+																			</div>';	
+																			
+																			
+														}else{
+															echo '<div class="margin-left-15">
+																				<div class="text-muted text-small">
+																					You Rated this user
+																				</div>
+																				<p>
+																				
+																				<div class="margin-bottom-30 text-extra-large" id="clickSanta">
+																<input type="hidden" class="rating"  readonly="readonly" value="'.$avaerage_rating.'" data-filled="fa fa-star margin-right-5 text-red" data-empty="fa fa-star-o margin-right-5"/>
+														<span id="ratingValue" class="label label-success">        </span>
+																				</div>
+																				</p>
+																				<div class="text-muted text-small">
+																					Rated by '.$count_query.' users
+																				</div>
+																			</div>';
+															
+															
+															
+															
+														}	
+																			?>
+																			
+																			
+																			
+																		</li>
+																		
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="panel panel-white space20">
+															<div class="panel-heading">
+																<h4 class="panel-title">About</h4>
+															</div>
+															<div class="panel-body">
+																<ul class="ltwt">
+																	<li class="ltwt_tweet">
+																	
+																		<p class="ltwt_tweet_text">
+																			<a href class=text-info">
+																			
+																				@<?php echo $user_first_name,$user_last_name; ?>
+																			</a>
+																			<?php echo $user_bio; ?>
+																		</p>
+																		<span class="block text-light"><i class="fa fa-fw fa-clock-o"></i> updated some time ago</span>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="panel_projects" class="tab-pane fade">
+											<!--- ITEMS FOR THE PROJECT GOES HERE -->
+												
+													
+													<!--- ITEMS FOR THE PROJECT GOES HERE -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: USER PROFILE -->
+					</div>
+				</div>
+			</div>
+			<!-- start: FOOTER -->
+			<footer>
+				<button class="hidden christmas-santa"></button>
+				<div class="footer-inner">
+					<div class="pull-left">
+						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> LanerShelf</span>. <span>All rights reserved</span>
+					</div>
+					<div class="pull-right">
+						<span class="go-top"><i class="ti-angle-up"></i></span>
+					</div>
+				</div>
+			</footer>
+			<!-- end: FOOTER -->
+			<!-- start: OFF-SIDEBAR -->
+					<?php require_once 'right_sidebar.php'; ?>
+			<!-- end: OFF-SIDEBAR -->
+			<!-- start: SETTINGS -->
+			
+			<!-- end: SETTINGS -->
+		</div>
+		<!-- start: MAIN JAVASCRIPTS -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/modernizr/modernizr.js"></script>
+		<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+		<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="vendor/switchery/switchery.min.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="vendor/bootstrap-fileinput/jasny-bootstrap.js"></script>
+		<script src="vendor/select2/select2.min.js"></script>
+		<script src="assets/js/form-elements.js"></script>
+		<script src="vendor/bootstrap-rating/bootstrap-rating.min.js"></script>
+		<script src="assets/js/ui-elements.js"></script>
+		
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CLIP-TWO JAVASCRIPTS -->
+		<script src="assets/js/main.js"></script>
+		<script src="vendor/sweetalert/sweet-alert.min.js"></script>
+		<script src="assets/js/ui-notifications.js"></script>
+		
+		<!-- start: JavaScript Event Handlers for this page -->
+		<script> 
+		jQuery(document).ready(function() {
+		UINotifications.init();
+		});
+		</script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				//UIElements.init();
+				
+					
+				
+				function loadRate() {
+
+		$('.rating, .rating-tooltip').each(function() {
+			$(this).val() > 0 ? $(this).next(".label").show().text($(this).val() || ' ') : $(this).next(".label").hide();
+		});
+		$('.rating-tooltip').rating({
+			extendSymbol: function(rate) {
+				$(this).tooltip({
+					container: 'body',
+					placement: 'bottom',
+					title: 'Rate ' + rate
+				});
+			}
+		});
+		$('.rating, .rating-tooltip').on('change', function() {
+			$(this).next('.label').show().text($(this).val());
+		});
+	}
+				
+				loadRate();
+				
+			});
+			
+			
+			
+			
+			
+		</script>
+		
+		<script>
+		
+				$("form#form").on('submit', function(event){
+				
+					event.preventDefault();
+    var formData = new FormData(this); 
+	var profilePicVal = $('#profilePicture').attr('src');
+	 formData.append(profilePicVal, 'profilePic');
+	
+	var dateObj = new Date();
+var newDateString = dateObj.getMilliseconds();
+        $.ajax({
+            url: 'modules/ajax.update_profile.php?id='+ newDateString,
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+				
+				$('#post-response').text(data);
+				console.log(data);
+				var res = data.match(/successful/gi);
+				
+			   //if(res.length > 0) { /*/do something*/ }
+			   
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+            
+    });
+		
+		
+		
+						$("a#hireUser").on('click', function(event){
+				
+					event.preventDefault();
+    
+	
+	var dataObj = '<?php $trap_id = (int)mysql_real_escape_string($_REQUEST['a642a77abd7d4f51bf9226ceaf891fcbb5b299b8']); echo  $trap_id; ?>';
+
+        $.ajax({
+            url: 'modules/hire_from_profile.php?a642a77abd7d4f51bf9226ceaf891fcbb5b299b8='+ dataObj,
+            type: 'POST',
+            data: 'a642a77abd7d4f51bf9226ceaf891fcbb5b299b8='+dataObj,
+            success: function (data) {
+				
+			
+				console.log(data);
+				var res = data.match(/successful/gi);
+				
+			   //if(res.length > 0) { /*/do something*/ }
+			   
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+            
+    });
+		
+		</script>
+		
+		<script>
+		
+		$('#clickSanta').on('click',function(){
+			alert($('#ratingValue').text());
+			
+			
+// Define the string
+var I = parseInt($('#ratingValue').text());
+
+// Encode the String
+var crc32 = btoa(I);
+
+// Decode the String
+var decodedString = atob(crc32);
+<?php $trap_id = (int)mysql_real_escape_string($_REQUEST['a642a77abd7d4f51bf9226ceaf891fcbb5b299b8']);
+
+echo "var target_string = $trap_id;";
+ ?>
+			
+			
+			        $.ajax({
+            url: 'modules/ajax.rating.php?a642a77abd7d4f51bf9226ceaf891fcbb5b299b8_crc='+crc32+'&a642a77abd7d4f51bf9226ceaf891fcbb5b299b8_uid='+target_string,
+            type: 'POST',
+            data: 'a642a77abd7d4f51bf9226ceaf891fcbb5b299b8='+crc32+'&a642a77abd7d4f51bf9226ceaf891fcbb5b299b8_uid='+target_string,
+            success: function (data) {
+				
+			
+				console.log(data);
+				var res = data.match(/successful/gi);
+				
+			   //if(res.length > 0) { /*/do something*/ }
+			   
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+			
+			
+			
+			
+		});
+		
+		</script>
+		<!-- end: JavaScript Event Handlers for this page -->
+		<!-- end: CLIP-TWO JAVASCRIPTS -->
+	</body>
+</html>

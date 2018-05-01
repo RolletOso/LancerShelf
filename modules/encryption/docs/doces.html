@@ -1,0 +1,146 @@
+<html>
+<head>
+<style>
+	body {
+    		background-color: #ffffff;
+		font-family: sans-serif;
+		color: #000;		
+	}
+	div.cabecera {
+		position: relative;
+		background-color: #ffaa44;
+		color:#44aaff;
+		text-align:left;
+		font-weight: bold;
+		font-size: 50px;
+		left: 0px;
+		top: 0px;		
+		padding: 4px 0px 4px 0px;
+		margin-bottom: 4px;
+	}
+	div.titulo {
+		position: relative;
+		background-color: #ffaa44;
+		color: #000;
+		font-weight: bold;
+		padding: 4px 2em 4px 2em;
+		
+	}
+	div.texto{
+		position: relative;
+		padding: 2em 2em 2em 2em;
+	}
+	a {
+		text-decoration: none;
+    	   	color: #999999;
+		background-color: #ffffff;
+	        font-weight: normal;
+	}
+	div.cabecera a {
+		text-decoration: none;
+    		font-size: medium;
+		color: #999999;
+		background-color: #ffaa44;
+		font-weight: normal;	
+	}
+	div.pie {
+		text-decoration: none;
+		font-size: normal;
+		color: #345678;
+		background-color: #ffaa44;
+		font-weight: bold;
+		width: 100%;
+		text-align: center;
+	}
+
+	
+</style>
+</head>
+<body>
+<div class="cabecera">
+<table><tr><td><big><big><b>AES128&nbsp;&nbsp;</b></big></big></td><td>
+<a href="#intro">Introducci&oacute;n</a> |
+<a href="#install">Instalaci&oacute;n</a> |
+<a href="#config">Configuraci&oacute;n</a> |
+<a href="#fcifr">Funciones de cifrado</a> |
+<a href="#ej">Ejemplos</a></td></tr></table>
+</div>
+<div class="contenido">
+	<a name="intro"></a>
+	<div class="titulo">Introducci&oacute;n:</div>
+	<div class="texto">
+		<b>AES128</b> es una implementación del algoritmo AES 128 bits (Advanced Encryption Standard) realizada en PHP. Permite cifrar datos mediante este algoritmo sin necesidad de bibliotecas externas.
+	</div>
+	<a name="install"></a>
+	<div class="titulo">Instalaci&oacute;n:</div>
+	<div class="texto">
+		Para instalar <b>AES128</b> solo tienes que copiar el archivo <i>AES128.php</i> 
+		a tu directorio de ejecuci&oacute;n de scripts php. 
+	</div>
+	<a name="config"></a>
+	<div class="titulo">Configuraci&oacute;n:</div>
+	<div class="texto">
+		No existen opciones de configuración.
+	</div>	
+	<a name="fcifr"></a>
+	<div class="titulo">Funciones de cifrado:</div>
+	<div class="texto">
+		Estas funciones son las que se llaman para cifrar datos:
+		<ul>
+			<li><b>AES128(boolHex, boolDebug): </b> Constructor de la clase. El par&aacute;metro <i>boolHex</i> indica si se devuelven los datos en hexadecimal (true) o en binario (false). El par&aacute;metro <i>boolDebug</i> indica se se muestra información de debug. Llamar al constructor sin par&aacute;metros es igual a AES128(false, false)</li>
+			<li><b>makeKey(txtClave):</b> Devuelve las subclaves de cifrado para cifrar/descifrar datos.El par&aacute;metro <i>txtClave</i> es la clave de cifrado (16 caracteres)</li>
+			<li><b>blockEncrypt(txtDatos, arrayClave): </b> Cifra 1 bloque de datos de 128 bits (16 caracteres). El par&aacute;metro <i>txtDatos</i> es el bloque de datos a cifrar y el par&aacute;metro <i>arrayClave</i> son las subclaves de cifrado creadas con makeKey().</li>
+			<li><b>blockDecrypt(txtDatos, arrayClave): </b> Descifra 1 bloque de datos de 128 bits (16 caracteres). El par&aacute;metro <i>txtDatos</i> es el bloque de datos a descifrar y el par&aacute;metro <i>arrayClave</i> son las subclaves de cifrado creadas con makeKey().</li>
+			<li><b>self_test(): </b> Verifica el funcionamiento del algoritmo. </li>
+		</ul>
+	</div>
+	<a name="ej"></a>
+	<div class="titulo">Ejemplos:</div>
+	<div class="texto">
+		<ul>
+		    <li><b>Test de funcionamiento:</b><br/><br/>
+		    	<i>
+		    		&nbsp;&nbsp;require_once('AES128.php');<br/>
+		    		&nbsp;&nbsp;$aes=new AES128();<br/>
+		    		&nbsp;&nbsp;$aes->self_test();<br/>
+		    	</i><br/>
+		    </li>
+			<li><b>B&aacute;sico:</b>Este ejemplo cifrará la cadena <i>"0123456789abcdef"  con la clave <i>"0123456789abcdef"</i> y luego la descifrará.<br/>
+				<br/>
+				<i>
+					&nbsp;&nbsp;require_once('AES128.php');<br/>
+					&nbsp;&nbsp;$aes=new AES128();<br/>
+					&nbsp;&nbsp;$key=$aes->makeKey("0123456789abcdef");<br/>
+					&nbsp;&nbsp;$ct=$aes->blockEncrypt("0123456789abcdef", $key);<br/>
+					&nbsp;&nbsp;$cpt=$aes->blockDecrypt($ct);<br/>
+					&nbsp;&nbsp;echo("CipherText: $ct &lt;br/&gt; PlainText: $cpt &lt;br/&gt;");<br/>
+				</i><br/>	
+			</li>		
+			<li><b>Salida en hexadecimal:</b> Este ejemplo cifrará la cadena <i>"0123456789abcdef"  con la clave <i>"0123456789abcdef"</i> . Se mostrarán los datos en hexadecimal<br/>
+				<br/>
+				<i>
+					&nbsp;&nbsp;require_once('AES128.php');<br/>
+					&nbsp;&nbsp;$aes=new AES128(true);<br/>
+					&nbsp;&nbsp;$key=$aes->makeKey("0123456789abcdef");<br/>
+					&nbsp;&nbsp;$ct=$aes->blockEncrypt("0123456789abcdef", $key);<br/>
+					&nbsp;&nbsp;echo("CipherText: $ct &lt;br/&gt;");<br/>
+				</i><br/>
+			</li>
+			<li><b>Modo debug:</b> Este ejemplo mostrará toda la salida de cada paso.
+				<br/>
+				<i>
+					&nbsp;&nbsp;require_once('AES128.php');<br/>
+					&nbsp;&nbsp;$aes=new AES128(false, true);<br/>
+					&nbsp;&nbsp;$key=$aes->makeKey("0123456789abcdef");<br/>
+					&nbsp;&nbsp;$ct=$aes->blockEncrypt("0123456789abcdef", $key);<br/>
+					&nbsp;&nbsp;$cpt=$aes->blockDecrypt($ct);<br/>
+					&nbsp;&nbsp;echo("CipherText: $ct &lt;br/&gt; PlainText: $cpt &lt;br/&gt;");<br/>			
+				</i><br/>
+			</li>
+
+		</ul>
+
+	</div>
+</div>
+<div class="pie">Jos&eacute; Manuel Busto</div
+</body>

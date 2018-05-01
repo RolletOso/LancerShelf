@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- Template Name: Clip-Two - Responsive Admin Template build with Twitter Bootstrap 3.x | Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	<!-- start: HEAD -->
+	<head>
+		<title>LancerShelf | Hire professional freelancers and artisans Online</title>
+		<!-- start: META -->
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: GOOGLE FONTS -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+		<!-- end: GOOGLE FONTS -->
+		<!-- start: MAIN CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="vendor/themify-icons/themify-icons.min.css">
+		<link href="vendor/animate.css/animate.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/switchery/switchery.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/taggingJS-master/tagging.css" rel="stylesheet" media="screen">
+		<!-- end: MAIN CSS -->
+		<!-- start: CLIP-TWO CSS -->
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<link rel="stylesheet" href="assets/css/plugins.css">
+		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+		<!-- end: CLIP-TWO CSS -->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+	</head>
+	<!-- end: HEAD -->
+	<!-- start: BODY -->
+	<body class="login">
+	<style>
+		@font-face {
+font-family: "Emma bold";
+src: url("assets/fonts/emma.ttf");
+}
+			  
+body {
+    font-family: "Emma bold", "Times New Roman", Times, serif;
+}
+
+
+	</style>
+		<!-- start: LOCK SCREEN -->
+		<div class="row">
+		
+			<div class="lock-screen">
+			
+				<div class="box-ls" >
+				<p class="danger" id="post-response"></p>
+				<div id="lock_loader" style="display:none" class="sk-fading-circle">
+  <div class="sk-circle1 sk-circle"></div>
+  <div class="sk-circle2 sk-circle"></div>
+  <div class="sk-circle3 sk-circle"></div>
+  <div class="sk-circle4 sk-circle"></div>
+  <div class="sk-circle5 sk-circle"></div>
+  <div class="sk-circle6 sk-circle"></div>
+  <div class="sk-circle7 sk-circle"></div>
+  <div class="sk-circle8 sk-circle"></div>
+  <div class="sk-circle9 sk-circle"></div>
+  <div class="sk-circle10 sk-circle"></div>
+  <div class="sk-circle11 sk-circle"></div>
+  <div class="sk-circle12 sk-circle"></div>
+</div>
+					<div id="lock_display">
+					<img alt="" src="assets/images/alt-user.png" class="img-rounded"/>
+					<div class="user-info" >
+						<h4><?php  echo $_REQUEST['fullname'];  ?></h4>
+						<span><?php echo $_REQUEST['email']; ?></span>
+						
+						<form  method="post" action="modules/lockscreen.php" id="log">
+						
+							<div class="input-group">
+							<?php echo'<input type="text"  style="display:none" name="email" type="hidden" value="'.$_REQUEST['email'].'" />'; ?>
+								
+							<input type="password" placeholder="Password to unlock" name="password" class="form-control" />
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="submit">
+										<i class="fa fa-chevron-right"></i>
+									</button> </span>
+							
+							</div>
+						</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- end: LOCK SCREEN -->
+		<!-- start: MAIN JAVASCRIPTS -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/modernizr/modernizr.js"></script>
+		<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+		<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="vendor/switchery/switchery.min.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CLIP-TWO JAVASCRIPTS -->
+		<script src="assets/js/main.js"></script>
+		<script>
+		$("form#log").on('submit', function(event){
+				
+					event.preventDefault();
+    var formData = new FormData(this); 
+	
+	var dateObj = new Date();
+var newDateString = dateObj.getMilliseconds();
+        $.ajax({
+            url: 'modules/lockscreen.php?id='+ newDateString,
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+				
+				$('#post-response').html(data);
+				
+				var res = data.match(/successful/gi);
+				
+			   if(res.length > 0) {  
+			   $('#lock_display').hide();
+			   $('#lock_loader').show();
+			   setTimeout(function(){ location.href = 'dashboard.php'; }, 5000);
+			   }
+			   
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+            
+    });
+	</script>
+		
+		<!-- start: JavaScript Event Handlers for this page -->
+		<script src="assets/js/login.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Login.init();
+			});
+		</script>
+		<!-- end: JavaScript Event Handlers for this page -->
+		<!-- end: CLIP-TWO JAVASCRIPTS -->
+	</body>
+	<!-- end: BODY -->
+</html>
